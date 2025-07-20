@@ -6,3 +6,32 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+-- local transparent = os.getenv("TRANSPARENT_BACKGROUND") or "false"
+-- if transparent == "true" then
+--   vim.api.nvim_create_autocmd({ "colorscheme" }, {
+--     pattern = { "*" },
+--     callback = function(ev)
+--
+--       -- print(string.format("event fired: %s", vim.inspect(ev)))
+--     end,
+--   })
+-- end
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--   callback = function()
+--     if vim.fn.argc() == 1 and vim.fn.isdirectory(vim.fn.argv(0)) == 1 then
+--       -- Get the current buffer
+--       require("neo-tree.command").execute({ position = "current", toggle = false })
+--       local bufnr = vim.api.nvim_get_current_buf()
+--       vim.notify("one")
+--       vim.notify(vim.api.nvim_get_option_value("buftype", { buf = bufnr }))
+--       vim.notify("two")
+--       vim.notify(vim.api.nvim_buf_get_name(bufnr))
+--
+--       -- vim.api.nvim_buf_delete(bufnr, { force = true })
+--       -- Check if it's an empty, unnamed buffer and delete it
+--       if vim.api.nvim_buf_get_name(bufnr) == "" and vim.api.nvim_get_option_value("buftype", { buf = bufnr }) == "" then
+--         vim.api.nvim_buf_delete(bufnr, { force = true })
+--       end
+--     end
+--   end,
+-- })

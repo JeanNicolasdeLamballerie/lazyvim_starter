@@ -20,8 +20,13 @@ end
 -- Move around with centered cursor.
 map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
+map("n", "<leader>bbb", function()
+  vim.fn.jobstart()
+end)
 
 -- Opens a floating terminal
-map({ "n", "t" }, "<c-!>", function()
+map({ "n", "t" }, "<c-/>", function()
   vim.cmd(":FloatermToggle")
 end, { desc = "Terminal (Root Dir)" })
+
+vim.api.nvim_set_keymap("n", "<F2>", ":CFormat42<CR>", { noremap = true, silent = true })

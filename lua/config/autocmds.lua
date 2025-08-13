@@ -35,3 +35,10 @@
 --     end
 --   end,
 -- })
+--
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = { "*.c", "*.h", "*.cpp", "*.hpp", "*.cc", "*.cxx" },
+  callback = function()
+    vim.b.autoformat = false
+  end,
+})

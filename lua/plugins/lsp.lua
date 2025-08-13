@@ -21,8 +21,10 @@ return {
     lazy = true,
     opts = {
       formatters_by_ft = {
+        c = nil,
         sql = { "sqlfmt" },
         rust = { "rustfmt" },
+        -- c = { "python3 -m c_formatter_42" },
       },
       formatters = {
         rustfmt = {

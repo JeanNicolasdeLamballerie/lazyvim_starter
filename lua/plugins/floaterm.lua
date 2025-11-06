@@ -5,8 +5,8 @@ return {
     border = false,
     terminals = {
       { name = "Coffee Machine 󰄛 " },
-      { name = "⭘ 󰰮 ⭘ " },
-      { name = "⭘ 󰰮 ⭘ ", cmd = "ls" },
+      -- { name = "⭘ 󰰮 ⭘ " },
+      -- { name = "⭘ 󰰮 ⭘ ", cmd = "ls" },
     },
   },
   cmd = "FloatermToggle",

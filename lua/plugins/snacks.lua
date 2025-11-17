@@ -15,15 +15,14 @@ return {
       -- map("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" })
       -- map("t", "<c-_>", "<cmd>close<cr>", { desc = "which_key_ignore" })
     },
-  }  -- map("n", "<leader>ft", function() Snacks.terminal(nil, { cwd = LazyVim.root() }) end, { desc = "Terminal (Root Dir)" })
-  -- map("n", "<c-/>",      function() Snacks.terminal(nil, { cwd = LazyVim.root() }) end, { desc = "Terminal (Root Dir)" })
+  }  -- map("n", "<c-/>",      function() Snacks.terminal(nil, { cwd = LazyVim.root() }) end, { desc = "Terminal (Root Dir)" })
   -- map("n", "<c-_>",      function() Snacks.terminal(nil, { cwd = LazyVim.root() }) end, { desc = "which_key_ignore" })
   --
   -- -- Terminal Mappings
   -- map("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" })
   -- map("t", "<c-_>", "<cmd>close<cr>", { desc = "which_key_ignore" })
 
-, -- -- floating terminal -- map("n", "<leader>fT", function() Snacks.terminal() end, { desc = "Terminal (cwd)" })
+, -- -- floating terminal -- map("n", "<leader>fT", function() Snacks.terminal() end, { desc = "Terminal (cwd)" }) -- map("n", "<leader>ft", function() Snacks.terminal(nil, { cwd = LazyVim.root() }) end, { desc = "Terminal (Root Dir)" })
   {
 
     "saghen/blink.cmp",
@@ -43,7 +42,7 @@ return {
         completion_toggle:toggle()
       end
 
-      vim.keymap.set({ "n" }, "<leader>ac", toggle_completion, { desc = "Toggle Completion" })
+      vim.keymap.set({ "n" }, "<C-a>", toggle_completion, { desc = "Toggle Completion" })
       opts.enabled = function()
         return vim.b.completion
       end

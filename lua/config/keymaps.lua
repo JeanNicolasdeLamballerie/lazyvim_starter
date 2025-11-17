@@ -25,3 +25,8 @@ map("n", "<C-u>", "<C-u>zz")
 map({ "n", "t" }, "<c-!>", function()
   vim.cmd(":FloatermToggle")
 end, { desc = "Terminal (Root Dir)" })
+
+-- Precognition control
+map({ "n" }, "<leader>Y", function()
+  vim.cmd(":Precognition toggle")
+end, { desc = "Enable or disable Precognition" })

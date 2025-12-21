@@ -43,7 +43,7 @@ return {
         completion_toggle:toggle()
       end
 
-      vim.keymap.set({ "n" }, "<leader>ac", toggle_completion, { desc = "Toggle Completion" })
+      vim.keymap.set({ "n" }, "<C-a>", toggle_completion, { desc = "Toggle Completion" })
       opts.enabled = function()
         return vim.b.completion
       end

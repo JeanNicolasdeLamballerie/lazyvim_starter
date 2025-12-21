@@ -25,3 +25,6 @@ vim.o.tabstop = 4 -- A TAB character looks like 4 spaces
 vim.o.expandtab = false -- Pressing the TAB key will insert TAB character
 vim.o.softtabstop = 0 -- Number of spaces inserted instead of a TAB character
 vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
+
+
+vim.g.c_syntax_for_h=1

@@ -5,7 +5,7 @@ return {
     keys = { "<F1>" },
     opts = {
       auto_update = true, -- Update header when saving.
-      user = "jean.nicolas-de-lamballerie", -- Your user.
+      user = "jenicola", -- Your user.
       mail = "jean.nicolas-de-lamballerie@learner.42.tech", -- Your mail.
       -- asciiart = { "##", "--" },
       -- add other options.

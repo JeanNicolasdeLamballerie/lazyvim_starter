@@ -15,6 +15,20 @@
 --
 --TODO Decide on a strategy to set linter lang
 return {
+  -- {
+  --   "neovim/nvim-lspconfig",
+  --   opts = {
+  --     servers = {
+  --       -- ruff = {
+  --       --   init_options = {
+  --       --     settings = {
+  --       --       lineLength = 50,
+  --       --     },
+  --       --   },
+  --       -- },
+  --     },
+  --   },
+  -- },
   {
     "stevearc/conform.nvim",
     dependencies = { "mason.nvim" },
@@ -24,9 +38,20 @@ return {
         c = nil,
         sql = { "sqlfmt" },
         rust = { "rustfmt" },
+        python = { "ruff_format" },
         -- c = { "python3 -m c_formatter_42" },
       },
       formatters = {
+        ruff = {
+          args = {
+            "format",
+            "--config",
+            "~/.config/ruff/ruff.toml",
+            "--stdin-filename",
+            "$FILENAME",
+            "-",
+          },
+        },
         rustfmt = {
           command = "rustfmt",
           args = { "+nightly" },
@@ -34,36 +59,36 @@ return {
       },
     },
   },
-  {
-    "mfussenegger/nvim-lint",
-    -- function(a, b)
-    -- vim.notify(dump(b))
-    --
-    -- print(a, b)
-    -- return b
-    opts = {
-      -- Event to trigger linters
-      -- LazyVim extension to easily override linter options
-      -- or add custom linters.
-      linters = {
-        sqlfluff = {
-          args = {
-            "lint",
-            "--format=json",
-            -- note: users will have to replace the --dialect argument accordingly
-            "--dialect=sqlite",
-          },
-        },
-        -- -- Example of using selene only when a selene.toml file is present
-        -- selene = {
-        --   -- `condition` is another LazyVim extension that allows you to
-        --   -- dynamically enable/disable linters based on the context.
-        --   condition = function(ctx)
-        --     return vim.fs.find({ "selene.toml" }, { path = ctx.filename, upward = true })[1]
-        --   end,
-        -- },
-      },
-    },
-    -- end,
-  },
+  -- {
+  --   "mfussenegger/nvim-lint",
+  --   -- function(a, b)
+  --   -- vim.notify(dump(b))
+  --   --
+  --   -- print(a, b)
+  --   -- return b
+  --   opts = {
+  --     -- Event to trigger linters
+  --     -- LazyVim extension to easily override linter options
+  --     -- or add custom linters.
+  --     linters = {
+  --       sqlfluff = {
+  --         args = {
+  --           "lint",
+  --           "--format=json",
+  --           -- note: users will have to replace the --dialect argument accordingly
+  --           "--dialect=sqlite",
+  --         },
+  --       },
+  --       -- -- Example of using selene only when a selene.toml file is present
+  --       -- selene = {
+  --       --   -- `condition` is another LazyVim extension that allows you to
+  --       --   -- dynamically enable/disable linters based on the context.
+  --       --   condition = function(ctx)
+  --       --     return vim.fs.find({ "selene.toml" }, { path = ctx.filename, upward = true })[1]
+  --       --   end,
+  --       -- },
+  --     },
+  --   },
+  --   -- end,
+  -- },
 }

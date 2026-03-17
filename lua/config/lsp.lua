@@ -1,0 +1,8 @@
+-- vim.lsp.config("ruff", {
+--   init_options = {
+--     settings = {
+--       lineLength = 50,
+--     },
+--   },
+-- })
+-- vim.lsp.enable("ruff")
